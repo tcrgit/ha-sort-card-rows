@@ -1,6 +1,8 @@
 # Sort Card Rows
 
-A Home Assistant frontend plugin that lets you control the order of the rows inside dashboard cards—including auto-generated Overview, Area, and strategy dashboards—without renaming entities to alphabetize them, or converting cards and dashboards to manual YAML code. Enables the user to **put the important stuff first**.
+A Home Assistant frontend plugin that lets you control the order of the rows inside dashboard cards—including auto-generated Overview, Area, and strategy dashboards—without renaming entities to alphabetize them, or converting cards and dashboards to manual YAML code.
+
+Enables the user **to put the important controls and information first**.
 
 ## Features & Sorting Priority
 
