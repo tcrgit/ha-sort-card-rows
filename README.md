@@ -13,7 +13,7 @@ Rows inside supported cards are ordered using a 5-tier priority chain:
 4. **Priority Keywords:** Optional comma-separated keywords (for example, Indoor, Outdoor) break ties within the same device_class group.
 5. **Alphabetical Tie-Breaker:** Any remaining ties sort alphabetically by display name.
 
-### Bonus: Targeted Card Header Toggle Hiding
+### Bonus: Card Header Toggle Hiding
 
 * Suppress the card title toggle switch in the header of specific multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**, or by attaching the auto-seeded `no-header-toggle` label to an Area, device, or entity.
 
