@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sort Card Rows",
+        "description": "Custom entity and device ordering for Home Assistant dashboards using drag-and-drop pins, labels (sort-1, sort-2, ..., sort-bottom), device classes, and keywords."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Already configured. Only a single instance is allowed."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sort Card Rows Configuration",
+        "description": "Configure global sorting and card header options. Entities are ordered by: (1) Pinned list, (2) Device/Entity sort-* labels, (3) Device class order, (4) Keywords, (5) Alphabetical.",
+        "sections": {
+          "sort_options": {
+            "name": "Entity sorting options",
+            "data": {
+              "pinned_entities": "Pinned entities (drag and drop to pin at the top of cards)",
+              "device_class_order": "Device class priority order (comma-separated)",
+              "keyword_order": "Priority keywords within groups (comma-separated, e.g. Indoor, Outdoor)",
+              "auto_dashboards_only": "Only sort untouched auto-generated dashboards"
+            }
+          },
+          "card_header_options": {
+            "name": "Hide card headers for these areas",
+            "data": {
+              "no_header_toggle_areas": "Areas"
+            }
+          }
+        }
+      }
+    }
+  }
+}
