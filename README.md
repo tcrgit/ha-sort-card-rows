@@ -1,13 +1,13 @@
 # Sort Card Rows
 
-A Home Assistant frontend plugin that lets you control the order of the rows inside dashboard cards—including auto-generated Overview, Area, and strategy dashboards—without renaming entities to alphabetize them, or converting cards and dashboards to manual YAML code.
+A Home Assistant frontend plugin that lets you control the order of the rows inside dashboard cards—including auto-generated Overview, Area, and strategy dashboards—without renaming entities to alphabetize them, or converting cards and dashboards to manual YAML code. Enables the user to **put the important stuff first**.
 
 ## Features & Sorting Priority
 
 Rows inside supported cards are ordered using a 5-tier priority chain:
-1. **Pinned Entities (Drag-and-Drop):** Entities selected under **Pinned entities** in the integration's **Configure** dialog sort to the very top of their card in your exact drag-and-drop order—ideal for temporary troubleshooting without altering your permanent labels.
-2. **Device & Entity sort-x Labels:** Assign native Home Assistant labels (sort-1 through sort-9, sort-top, sort-bottom, a sort-0 label to temporarily push things to the top, or even using custom decimal labels like sort-1.5):
-	* **Card-Wide Row Ordering:** Attach `sort-1`, `sort-2`, or `sort-bottom` directly to individual entities to pin them to the top or bottom of a card.
+1. **Pinned Entities (Drag-and-Drop):** Entities selected under **Pinned entities** in the integration's **Configure** dialog sort to the top of their card. Thus tool supports drag-and-drop ordering.
+2. **Device & Entity sort-x Labels:** Assign native Home Assistant labels (`sort-1` through `sort-9`, `sort-top`, `sort-bottom`, a `sort-0` label to temporarily push things to the top, or even using custom decimal labels like `sort-1.5`):
+	* **Card Row Ordering:** Attach `sort-1`, `sort-2`, or `sort-bottom` directly to individual switch sensor entities to pin them to the top or bottom of a card.
 	* **Multi-Device Grouping:** Attach a `sort-x` label to a Device (including *parent* devices with multiple post-`2026.11.0` *child* devices) to keep all of its entities grouped together as a block, and attach more `sort-x` labels to its Entities to order rows within that device group.
 3. **Device Class Grouping:** Unranked rows group automatically by device_class using your configured priority list (defaults to temperature, humidity, illuminance, pressure, atmospheric_pressure, radon, carbon_dioxide, battery and so on). For sensors without a device_class, apply a label like sort-temperature or sort-pressure.
 4. **Priority Keywords:** Optional comma-separated keywords (for example, Indoor, Outdoor) break ties within the same device_class group.
@@ -15,7 +15,7 @@ Rows inside supported cards are ordered using a 5-tier priority chain:
 
 ### Bonus: Card Header Toggle Hiding
 
-* Suppress the card title toggle switch in the header of specific multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**, or by attaching the auto-seeded `no-header-toggle` label to an Area, device, or entity.
+* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**, or by attaching the auto-seeded `no-header-toggle` label to an Area, device, or entity.
 
 ## Installation
 
