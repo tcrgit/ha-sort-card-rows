@@ -13,7 +13,7 @@ Rows inside supported cards are ordered using a 5-tier priority chain:
 	* **Multi-Device Grouping:** Attach a `sort-x` label to a Device (including *parent* devices with multiple post-`2026.11.0` *child* devices) to keep all of its entities grouped together as a block, and attach more `sort-x` labels to its Entities to order rows within that device group.
 3. **Device Class Grouping:** Unranked rows group automatically by device_class using your configured priority list (defaults to temperature, humidity, illuminance, pressure, atmospheric_pressure, radon, carbon_dioxide, battery; but the user can edit the order and add more). For sensors without a device_class, apply a label like `sort-temperature` or `sort-pressure` to make that sensor sort like others that do have a device class.
 4. **Priority Keywords:** Optional comma-separated keywords (for example, `Outdoor, Indoor`) allows you to sort rows by keywords found in the switch or sensor entity name, just ahead of the default alphabetization order. For example, you could set your dashboard to display the `Outdoor Temperature` before the `Indoor Temperature` automatically, without assigning labels to the entities.
-5. **Alphabetical Tie-Breaker:** Any remaining ties sort alphabetically by the switch or sensor entity name.
+5. **Alphabetical Tie-Breaker:** Any remaining ties sort alphabetically by the switch or sensor entity name. This is the default HA behavior for automatically generated cards.
 
 ### Bonus: Card Header Toggle Hiding
 
