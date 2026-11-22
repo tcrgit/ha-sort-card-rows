@@ -49,7 +49,7 @@ The sorting rule methods are flexible and designed to work together. They are ap
 | :---: | :---: |
 | *Default toggle on Area card header* | *No Area card toggle afterwards* |
 
-* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**. While there are places a toggle to turn on all the switches in an area is useful, there are also many places when this is not desireable .
+* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**. While there are places a toggle to turn on all the switches in an area is useful, there are also many places when this is not desireable.
 
 ## Support for Other Dashboard Templates
 
