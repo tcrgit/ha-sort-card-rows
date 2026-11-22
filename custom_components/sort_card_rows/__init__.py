@@ -34,6 +34,7 @@ STARTER_LABELS = [
     ("sort-7", "mdi:numeric-7-box-outline", "Sort priority 7"),
     ("sort-8", "mdi:numeric-8-box-outline", "Sort priority 8"),
     ("sort-9", "mdi:numeric-9-box-outline", "Sort priority 9"),
+    ("sort-top", "mdi:arrow-up-bold-box-outline", "Sort to top of card (above even sort-0)"),
     ("sort-bottom", "mdi:arrow-down-bold-box-outline", "Sort to bottom of card (same as sort-999)"),
 ]
 
@@ -78,7 +79,7 @@ def _build_settings_payload(options: dict) -> dict:
         "no_header_toggle_areas": options.get(CONF_NO_HEADER_TOGGLE_AREAS, []),
         "device_class_order": device_classes,
         "keyword_order": keywords,
-        "auto_dashboards_only": options.get(CONF_AUTO_DASHBOARDS_ONLY, False),
+        "auto_dashboards_only": options.get(CONF_AUTO_DASHBOARDS_ONLY, True),
     }
 
 class SortEntitiesSettingsView(HomeAssistantView):

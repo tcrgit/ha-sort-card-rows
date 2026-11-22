@@ -91,7 +91,7 @@ class SortEntitiesOptionsFlow(config_entries.OptionsFlow):
                             ): selector.TextSelector(selector.TextSelectorConfig()),
                             vol.Required(
                                 CONF_AUTO_DASHBOARDS_ONLY,
-                                default=opts.get(CONF_AUTO_DASHBOARDS_ONLY, False),
+                                default=opts.get(CONF_AUTO_DASHBOARDS_ONLY, True),
                             ): selector.BooleanSelector(),
                         }
                     ),

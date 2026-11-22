@@ -22,7 +22,7 @@
               "pinned_entities": "Pinned entities (drag and drop to pin at the top of cards)",
               "device_class_order": "Device class priority order (comma-separated)",
               "keyword_order": "Priority keywords within groups (comma-separated, e.g. Indoor, Outdoor)",
-              "auto_dashboards_only": "Only sort untouched auto-generated dashboards"
+              "auto_dashboards_only": "Only sort auto-generated dashboards (preserve manual order on custom Lovelace cards)"
             }
           },
           "card_header_options": {
