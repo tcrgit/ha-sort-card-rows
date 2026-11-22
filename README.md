@@ -7,10 +7,10 @@ A lightweight Home Assistant frontend integration **to position the most importa
 ## Installation
 
 1. **Marketplace / HACS (Recommended):**
-	* Open **Settings > Marketplace (or HACS)**, click the three dots (...) in the top-right corner > **Custom repositories**, and add `https://github.com/tcrgit/ha-sort-card-rows` as an **Integration**.
-	* Install **Sort Card Rows**, click Setup (or **Restart Home Assistant** and add it under **Settings > Devices & Services > + Add Integration**), and **hard-refresh your browser** (`Ctrl + Shift + R` or `Cmd + Shift + R`).
+    * Open **Settings > Marketplace (or HACS)**, click the three dots (...) in the top-right corner > **Custom repositories**, and add `https://github.com/tcrgit/ha-sort-card-rows` as an **Integration**.
+    * Install **Sort Card Rows**, click Setup (or **Restart Home Assistant** and add it under **Settings > Devices & Services > + Add Integration**), and **hard-refresh your browser** (`Ctrl + Shift + R` or `Cmd + Shift + R`).
 2. **Manual:**
-	* Copy custom_components/sort_card_rows into /config/custom_components/, **Restart Home Assistant**, and add **Sort Card Rows** via **Settings > Devices & Services > + Add Integration**.
+    * Copy custom_components/sort_card_rows into /config/custom_components/, **Restart Home Assistant**, and add **Sort Card Rows** via **Settings > Devices & Services > + Add Integration**.
 
 ## Usage & Configuration
 
@@ -30,8 +30,8 @@ When using this integration, the rows inside supported dashboard cards are order
 The sorting rule methods are flexible and designed to work together. They are applied in the following sequence, and any ties between entities at a higher level are resolved by lower priority rules. For example: if two light switches both have `sort-2` labels, their order would likely fall through to the alphabetical tie-breaker.
 1. **Pinned Entities (Drag-and-Drop):** Switch and sensor entities selected from **Pinned entities** list in the integration's **Configure** dialog sort to the top of their card. This method supports drag-and-drop ordering of the selected items.
 2. **Device & Entity `sort-x` Labels:** You can sort rows by assigning entities pre-created, numeric Home Assistant labels (such as `sort-1` through `sort-9`, `sort-top`, and `sort-bottom`), use the `sort-0` label to temporarily push a row to the top, or even create custom decimal labels like `sort-1.5`:
-	* **Card Row Ordering:** Attach `sort-1`, `sort-2`, `sort-top` or `sort-bottom` directly to individual switch sensor entities to immediately move them to the top or bottom of a card.
-	* **Multi-Device Grouping:** Attach a `sort-x` label to a Device (including *parent* devices with multiple post-`2026.11.0` *child* devices) to keep all of its entities grouped together as a block, and attach more `sort-x` labels to its entities to order rows within that device group.
+    * **Card Row Ordering:** Attach `sort-1`, `sort-2`, `sort-top` or `sort-bottom` directly to individual switch sensor entities to immediately move them to the top or bottom of a card.
+    * **Multi-Device Grouping:** Attach a `sort-x` label to a Device (including *parent* devices with multiple post-`2026.11.0` *child* devices) to keep all of its entities grouped together as a block, and attach more `sort-x` labels to its entities to order rows within that device group.
 3. **Device Class Grouping:** Rows can be grouped and ordered automatically by their built-in *device class* using a configured priority list. The default device class sort order is `temperature`, `humidity`, `illuminance`, `pressure`, `atmospheric_pressure`, `radon`, `carbon_dioxide`, `battery`; but the user can edit the order and add or delete device class names. (*Note: For sensors without a built-in device class, you may create and apply a label like `sort-temperature` or `sort-pressure` to make that sensor sort like others which do have that device class.*)
 4. **Priority Keywords:** Optional comma-separated keywords (for example `Outdoor, Indoor`) allow you to sort rows by any keywords found in the switch or sensor entity names, just ahead of the default alphabetization order. In this keyword example, the result would be display the `Outdoor Temperature` sensor before the `Indoor Temperature` sensor on the dashboard card (all other things being equal).
 5. **Alphabetical Tie-Breaker:** Any remaining ties between entities sort alphabetically by the switch or sensor entity name. This is the default HA behavior for automatically generated cards.
@@ -41,18 +41,14 @@ The sorting rule methods are flexible and designed to work together. They are ap
 | ![Configuration options in Settings -> Devices and Services -> Integration -> Sort Cart Rows](images/Configuration.png) |
 | *Configuration options* |
 
-| |
-| :---: |
-| ![Configuration options in Settings -> Devices and Services -> Integration -> Sort Cart Rows](images/Configuration.png) |
-| *Configuration options* |
-
 ### Bonus Feature: Card Header Toggle Hiding
 
-* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**. While there are places a toggle to turn on all the switches in an area is useful, there are also many places when this is not desireable .
+* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**. While there are places a toggle to turn on all the switches in an area is useful, there are also many places when this is not desireable.
 
 | ![Before](images/HeaderToggleOn.png) | ![After](images/HeaderToggleOff.png) |
 | :---: | :---: |
-| *Default toggle on Area card header* | *No Area card toggle afterwards*|
+| *Default toggle on Area card header* | *No Area card toggle afterwards* |
+
 * Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**. While there are places a toggle to turn on all the switches in an area is useful, there are also many places when this is not desireable .
 
 ## Support for Other Dashboard Templates
@@ -67,5 +63,5 @@ The sorting rule methods are flexible and designed to work together. They are ap
 
 ### Note on Home Dashboards (`2026.2+`)
 
-* **Largely unaffected:**  Because Home Assistant's newer **Home Dashboard** templates use Area navigation buttons and place entities or devices into separate tile sections instead of grouping an entire room onto a list card, **Sort Card Rows** does not reorder those views. 
+* **Largely unaffected:**  Because Home Assistant's newer **Home Dashboard** templates use Area navigation buttons and place entities or devices into separate tile sections instead of grouping an entire room onto a list card, **Sort Card Rows** does not reorder those views.
 * The only exception is when multiple entities share a single section, such as to the **Favorites** row on the Home Dashboard Overview.
