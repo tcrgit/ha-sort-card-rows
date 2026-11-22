@@ -15,20 +15,9 @@ The rows inside dashboard cards are ordered using a chain of sorting rules befor
 4. **Priority Keywords:** Optional comma-separated keywords (for example, `Outdoor, Indoor`) allow you to sort rows by keywords found in the switch or sensor entity name, just ahead of the default alphabetization order. For example, you could set your dashboard to display the `Outdoor Temperature` before the `Indoor Temperature` automatically, without assigning labels to the entities.
 5. **Alphabetical Tie-Breaker:** Any remaining ties sort alphabetically by the switch or sensor entity name. This is the default HA behavior for automatically generated cards.
 
-### Custom Lovelace Dashboards Untouched by Default
-
-* To support the use of both automatic and custom dashboards, **Custom (Lovelace) dashboard card rows and tiles are not sorted by default**, preserving the manual ordering you set using drag-and-drop or YAML in the Lovelace editor. This lets you attach a `sort-x` label to a sensor or switch so it sorts properly on auto-generated dashboards while leaving its position untouched on custom dashboards.
-* If you want your sorting rules to apply to custom dashboards as well, uncheck **Only sort auto-generated dashboards** in **Configure**—note that when toggled off, your `sort-x` rules will override any manual drag-and-drop or YAML ordering made in Edit Mode---so disable this setting with caution.
-  * *Note that when the sorting rules are being applied to custom dashboards and you are editing a custom dashboard, the sorting automatically **pauses** and restores each card's underlying YAML order so clicking or dragging tiles in edit mode always opens and moves the card as expected, then **immediately applies the sorting rules only after you click Done**.)*
-
 ### Bonus: Card Header Toggle Hiding
 
 * Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**.
-
-### Note on Home Dashboards (`2026.2+`)
-
-* **Largely leaves the newer Home Dashboard untouched:** Because Home Assistant's newer **Home Dashboard** templates use Area navigation buttons and place each device as a tile in its own separate section rather than grouping an entire room (or area)'s switches, sensors and devices into a single list card, **Sort Card Rows** does not reorder those views. The only exception is when multiple entities share a single section, such as in the **Favorites** row on the Home Dashboard's version of Overview.
-* **Where it works best:** This is designed for **Overview (legacy)**, **Areas** auto-generated dashboards, and standard **Entities** or **Grid** cards where multiple devices and sensors share a single card.
 
 ## Installation
 
@@ -43,3 +32,18 @@ The rows inside dashboard cards are ordered using a chain of sorting rules befor
 * **Auto-Seeded Labels:** On first setup, the integration creates `sort-0` through `sort-9`, `sort-top` and `sort-bottom` under **Settings > Areas, labels & zones > Labels**. Apply them to any device or entity and refresh your dashboard tab.
 * **Configure Dialog** (**Settings > Devices & Services > Sort Card Rows > Configure**): Manage your drag-and-drop **Pinned entities** list, customize device_class order, add priority keywords, toggle which types of dashboards to sort, or pick those Areas whose card header toggles should be hidden.
 * **Troubleshooting:** Check your browser console (`F12` or `Cmd + Option + I`) for `[Sort Card Rows] Active (v1.x.x, ...)`.
+
+## Support for Other Dashboard Templates 
+
+* **Where it works best:** This integration is designed for **Overview (legacy)**, **Areas** auto-generated dashboards, and standard **Entities** or **Grid** cards where multiple devices and sensors share a single card. It will also work on custom (Lovelace) dashboards, but it can be a bit quirky in Edit mode.
+
+### Custom (Lovelace) Dashboards Unsorted by Default
+
+* To support the use of both automatic and custom dashboards, **custom (Lovelace) dashboard card rows and tiles are not sorted by default**, preserving the manual ordering you set using drag-and-drop or YAML in the Lovelace GUI editor. This lets you attach a `sort-x` label to a sensor or switch so a switch or sensor entity sorts properly on auto-generated dashboards while leaving its position untouched on custom dashboards.
+* If you would like to have your sorting rules to apply to custom dashboards as well, uncheck **Only sort auto-generated dashboards** in **Configure**—note that when toggled off, your `sort-x` rules will override any manual drag-and-drop or YAML ordering made in Edit Mode---so disable this setting with caution.
+  * *Note that when the sorting rules are being applied to custom dashboards and you are editing a custom dashboard, the sorting automatically **pauses** and restores each card's underlying YAML order so clicking or dragging tiles in edit mode always opens and moves the card as expected, then **immediately applies the sorting rules only after you click Done**.)*
+
+### Note on Home Dashboards (`2026.2+`)
+
+* **Largely leaves the newer Home Dashboard untouched:** Because Home Assistant's newer **Home Dashboard** templates use Area navigation buttons and place each device as a tile in its own separate section rather than grouping an entire room's (or area's) switches, sensors and devices onto a list card, **Sort Card Rows** does not reorder those views. 
+* The only exception is when multiple entities share a single section, such as in the **Favorites** row on the Home Dashboard's version of Overview.
