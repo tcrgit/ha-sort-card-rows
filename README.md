@@ -18,6 +18,11 @@ A lightweight Home Assistant frontend integration **to position the most importa
 * **Configure Dialog** (**Settings > Devices & Services > Sort Card Rows > Configure**): Manage your drag-and-drop **Pinned entities** list, customize device class order, add priority keywords, toggle which types of dashboards to sort, or pick those Areas whose card header toggles should be hidden.
 * **Troubleshooting:** Check your browser console (`F12` or `Cmd + Option + I`) for `[Sort Card Rows] Active (v1.x.x, ...)`.
 
+| |
+| :---: |
+| ![Applying a sort-x label to a sensor](images/ApplySortLabelToSensor.png) |
+| *Applying a sort-x label to a switch or sensor* |
+
 ## Features & Sorting Priority
 
 When using this integration, the rows inside supported dashboard cards are ordered using a chain of sorting rules before falling back onto Home Assistant's default alphabetization order. While some sorting may improve immediately after installation (e.g. Temperature sensors should appear before Humidity sensors), most people will likely find either the first or second sorting rule methods most useful to set their optimal dashboard row order.
@@ -31,11 +36,21 @@ The sorting rule methods are flexible and designed to work together. They are ap
 4. **Priority Keywords:** Optional comma-separated keywords (for example `Outdoor, Indoor`) allow you to sort rows by any keywords found in the switch or sensor entity names, just ahead of the default alphabetization order. In this keyword example, the result would be display the `Outdoor Temperature` sensor before the `Indoor Temperature` sensor on the dashboard card (all other things being equal).
 5. **Alphabetical Tie-Breaker:** Any remaining ties between entities sort alphabetically by the switch or sensor entity name. This is the default HA behavior for automatically generated cards.
 
+| |
+| :---: |
+| ![Configuration options in Settings -> Devices and Services -> Integration -> Sort Cart Rows](images/Configuration.png) |
+| *Configuration options* |
+
 ### Bonus Feature: Card Header Toggle Hiding
 
-* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**.
+* Suppress the card title toggle switch in the header of multi-switch/light cards by selecting Areas under **Hide card headers for these areas** in **Configure**. While there are places a toggle to turn on all the switches in an area is useful, there are also many places when this is not desireable .
 
-## Support for Other Dashboard Templates 
+| :---: | :---: |
+| ![Before](images/HeaderToggleOn.png) | ![After](images/HeaderToggleOff.png) |
+| :---: | :---: |
+| *Default toggle on Area card header* | *No Area card toggle afterwards*|
+
+## Support for Other Dashboard Templates
 
 * **Where it works best:** This integration is designed for **Overview (legacy)**, **Areas** auto-generated dashboards, and standard **Entities** or **Grid** cards where multiple devices and sensors share a single card. It will also work on custom dashboards, but it can be a bit quirky in Edit mode.
 
