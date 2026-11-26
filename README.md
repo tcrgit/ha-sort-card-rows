@@ -1,6 +1,6 @@
 # Sort Card Rows
 
-A lightweight Home Assistant frontend integration **to position the most important controls and sensors first**.
+A Home Assistant frontend integration **to position the most important controls and sensors first**.
 
 **Sort Card Rows** lets you control the order of entity and device rows on dashboard cards—including auto-generated dashboards, such as **Overview (legacy)** and **Area** cards as well as built-in **Entities** and **Grid** cards on dashboards where multiple devices and sensors appear together in one card—and all without renaming entities just to alphabetize the dashboard rows correctly, or having to write YAML code.
 
