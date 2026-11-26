@@ -26,7 +26,7 @@
             }
           },
           "card_header_options": {
-            "name": "Hide card headers for these areas",
+            "name": "Hide card header toggles for these areas",
             "data": {
               "no_header_toggle_areas": "Areas"
             }
