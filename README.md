@@ -64,6 +64,12 @@ The sorting rule methods are flexible and designed to work together. They are ap
 * **Sorts tiles within individual sections, not across devices or Areas:** Because Home Assistant's newer **Home Dashboard** uses Area navigation buttons on the main screen and places each device into its own separate section inside Area views (rather than grouping an entire room into one list card), **Sort Card Rows** will not reorder Area tiles or rearrange the device sections themselves (such as `Printer` vs. `AdGuard Home`).
 * **Where it still sorts on Home Dashboards:** Whenever multiple entity tiles share a single section—such as within an individual device's section in an Area view or in the **Favorites** row on the main Home screen—**Sort Card Rows** reorders those tiles using your normal rules.
 
+ ![Before](images/HomeDashboardDevicesAlphabeticalDefault.png) 
+| ![After](images/HomeDashboardDevicesWithSortCardRows.png) |
+| :---: |
+| *Home Dashboard's default alphabetical sorting vs using Sort Card Rows to position the tile order* |
+
+
 ## Caveats and Troubleshooting
 * **Troubleshooting:** Check your browser console (`F12` or `Cmd + Option + I`) for `[Sort Card Rows] Active (v1.x.x, ...)` to test if the integration is loaded and active.
 
