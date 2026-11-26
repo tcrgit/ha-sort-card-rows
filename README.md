@@ -58,8 +58,10 @@ The sorting rule methods are flexible and designed to work together. They are ap
 * To support the use of both automatic and custom dashboard cards **custom dashboard card rows and tiles are not sorted by default**, preserving the manual ordering you set using drag-and-drop in the Lovelace GUI editor (or in the YAML code). This allows you to attach a `sort-x` label to a sensor or switch so it sorts properly on auto-generated dashboards, while **simultaneously** leaving its position untouched on your custom dashboard cards.
 * If you would like to have your sorting rules to apply to custom dashboard cards as well, uncheck **Only sort auto-generated dashboards (preserve manual order on custom Lovelace cards)** in **Configure**—note that when toggled off, your sorting rules will **override** any manual drag-and-drop or YAML ordering made in Edit mode, so disable this setting with caution.
   * *Edit mode: When sorting is enabled for custom dashboards, sorting will pause whenever you enter Edit mode. Cards and tiles will temporarily return to their underlying YAML order so they can be opened or moved normally in the editor. Sorting will resume automatically after you select Done.*
-
+* **Third-party custom cards are unaffected:** Community cards installed from HACS (such as `auto-entities` or `battery-state-card`) render their own custom containers and often provide their own YAML `sort:` options—so **Sort Card Rows** always leaves their internal rows untouched, even if you uncheck **Only sort auto-generated dashboards**.
+ 
 ### Note on Home Dashboards (`2026.2+`)
 
-* **Largely unaffected:**  Because Home Assistant's newer **Home Dashboard** templates use Area navigation buttons and place entities or devices into separate tile sections instead of grouping an entire room onto a list card, **Sort Card Rows** does not reorder those views.
-* The only exception is when multiple entities share a single section, such as to the **Favorites** row on the Home Dashboard Overview.
+* **Sorts tiles within individual sections, not across devices or Areas:** Because Home Assistant's newer **Home Dashboard** uses Area navigation buttons on the main screen and places each device into its own separate section inside Area views (rather than grouping an entire room into one list card), **Sort Card Rows** will not reorder Area tiles or rearrange the device sections themselves (such as `Printer` vs. `AdGuard Home`).
+* **Where it still sorts on Home Dashboards:** Whenever multiple entity tiles share a single section—such as within an individual device's section in an Area view or in the **Favorites** row on the main Home screen—**Sort Card Rows** reorders those tiles using your normal rules.
+
