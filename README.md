@@ -8,7 +8,7 @@ A lightweight Home Assistant frontend integration **to position the most importa
 
 1. **Marketplace / HACS (Recommended):**
     * Open **Settings > Marketplace (or HACS)**, click the three dots (...) in the top-right corner > **Custom repositories**, and add `https://github.com/tcrgit/ha-sort-card-rows` as an **Integration**.
-    * Install **Sort Card Rows**, click Setup (or **Restart Home Assistant** and add it under **Settings > Devices & Services > + Add Integration**), and **hard-refresh your browser** (`Ctrl + Shift + R` or `Cmd + Shift + R`).
+    * Install **Sort Card Rows**, click Setup (or **Restart Home Assistant** and add it under **Settings > Devices & Services > + Add Integration**), and **hard-refresh your browser** (`Ctrl + Shift + R` or `Cmd + Shift + R`) (_or close and reopen the Companion App_).
 2. **Manual:**
     * Copy custom_components/sort_card_rows into /config/custom_components/, **Restart Home Assistant**, and add **Sort Card Rows** via **Settings > Devices & Services > + Add Integration**.
 
@@ -16,7 +16,6 @@ A lightweight Home Assistant frontend integration **to position the most importa
 
 * **Automatically Creates `sort-x` Labels:** During setup, the integration creates `sort-0` through `sort-9`, `sort-top` and `sort-bottom` under **Settings > Areas, labels & zones > Labels**. Just apply the label to any entity (or device) and the order immediately changes in your dashboard.
 * **Configure Dialog** (**Settings > Devices & Services > Sort Card Rows > Configure**): Manage your drag-and-drop **Pinned entities** list, customize device class order, add priority keywords, toggle which types of dashboards to sort, or pick those Areas whose card header toggles should be hidden.
-* **Troubleshooting:** Check your browser console (`F12` or `Cmd + Option + I`) for `[Sort Card Rows] Active (v1.x.x, ...)`.
 
 | |
 | :---: |
@@ -64,4 +63,7 @@ The sorting rule methods are flexible and designed to work together. They are ap
 
 * **Sorts tiles within individual sections, not across devices or Areas:** Because Home Assistant's newer **Home Dashboard** uses Area navigation buttons on the main screen and places each device into its own separate section inside Area views (rather than grouping an entire room into one list card), **Sort Card Rows** will not reorder Area tiles or rearrange the device sections themselves (such as `Printer` vs. `AdGuard Home`).
 * **Where it still sorts on Home Dashboards:** Whenever multiple entity tiles share a single section—such as within an individual device's section in an Area view or in the **Favorites** row on the main Home screen—**Sort Card Rows** reorders those tiles using your normal rules.
+
+## Caveats and Troubleshooting
+* **Troubleshooting:** Check your browser console (`F12` or `Cmd + Option + I`) for `[Sort Card Rows] Active (v1.x.x, ...)` to test if the integration is loaded and active.
 
